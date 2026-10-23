@@ -1,0 +1,40 @@
+{
+  "name": "dsh-daily-read",
+  "version": "0.2.1",
+  "private": true,
+  "description": "Registers /daily, which sends the model to read the newest bili-scroll report and say what it understood instead of repeating the text; a sidebar panel runs the same command.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "author": "hzh5021",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hzh5021/dsh-daily-read.git"
+  },
+  "homepage": "https://github.com/hzh5021/dsh-daily-read#readme",
+  "engines": {
+    "node": ">=18"
+  }
+}
